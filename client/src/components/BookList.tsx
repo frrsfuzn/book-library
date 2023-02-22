@@ -9,14 +9,17 @@ function BookList() {
   const [bookId, setBookId] = useState<string>("");
   if (loading) return <div>Loading Books...</div>;
   return (
-    <div>
-      <ul id="book-list">
-        {data?.books?.map((book) => (
-          <li key={book?.id} onClick={() => setBookId(book?.id ?? "")}>
-            {book?.name}
-          </li>
-        ))}
-      </ul>
+    <div className="book-list-container">
+      <div>
+        <h1>Book List</h1>
+        <ul id="book-list">
+          {data?.books?.map((book) => (
+            <li key={book?.id} onClick={() => setBookId(book?.id ?? "")}>
+              {book?.name}
+            </li>
+          ))}
+        </ul>
+      </div>
       <BookDetails bookId={bookId} />
     </div>
   );

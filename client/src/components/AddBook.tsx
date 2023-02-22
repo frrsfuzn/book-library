@@ -40,7 +40,7 @@ function AddBook() {
   };
 
   return (
-    <div>
+    <div className="addBookContainer">
       {BookData && <div>Successfully save data!</div>}
       {error && <div>Error while saving the data!</div>}
       {loading && <div>Loaindg...</div>}

@@ -13,3 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.book-list-container {
+  display: flex;
+  justify-content: space-between;
+}

@@ -45,7 +45,7 @@ function BookDetails({ bookId }: BookDetailsProps) {
   };
 
   return (
-    <div style={{ margin: "50px 0px" }}>
+    <div>
       <h1>Book Details</h1>
       {loading && <div>Loading book details...</div>}
       {data && renderBookDetails()}
