@@ -1,6 +1,5 @@
 import { useQuery, useMutation } from "@apollo/client";
 import React, { useState } from "react";
-import { gql } from "../__generated__";
 import {
   getAuthorsQuery,
   addBookMutation,
