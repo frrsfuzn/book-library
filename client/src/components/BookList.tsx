@@ -1,11 +1,11 @@
 import React from "react";
-import { GetBooksQuery } from "../__generated__/graphql";
+import { useQuery } from "@apollo/client";
+import { gql } from "../__generated__";
+import { getBooksQuery } from "../queries/queries";
 
-interface BookListProps {
-  data: GetBooksQuery | undefined;
-}
-
-function BookList({ data }: BookListProps) {
+function BookList() {
+  const { loading, data } = useQuery(getBooksQuery);
+  if (loading) return <div>Loading Books...</div>;
   return (
     <div>
       <ul id="book-list">
