@@ -1,22 +1,17 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { GetBooksQuery } from "../__generated__/graphql";
 
-const getBooksQuery = gql`
-  {
-    books {
-      name
-    }
-  }
-`;
+interface BookListProps {
+  data: GetBooksQuery | undefined;
+}
 
-function BookList() {
-  const { loading, error, data } = useQuery(getBooksQuery);
-  console.log("data", data);
-  console.log("loading", loading);
+function BookList({ data }: BookListProps) {
   return (
     <div>
       <ul id="book-list">
-        <li>Book one</li>
+        {data?.books?.map((book) => (
+          <li key={book?.id}>{book?.name}</li>
+        ))}
       </ul>
     </div>
   );
